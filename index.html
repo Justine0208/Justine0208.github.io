@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Justine E. Calilong</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:rgba(241, 241, 242, 0.7);
+        }
+        .card {
+            background: rgba(20, 30, 53, 0.7);
+            border: 1px solid rgba(149, 163, 183, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+        }
+        .accent {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+        }
+    </style>
+</head>
+
+<body class="text-slate-200">
+
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto px-6 pt-10">
+        <div class="card p-8 flex flex-col md:flex-row items-center gap-8 shadow-xl">
+            <img src="https://i.pinimg.com/1200x/7d/ca/dd/7dcadd610e4655f750af0ed38c34200c.jpg"
+                 class="w-36 h-36 rounded-full border-4 border-slate-700 shadow-lg">
+
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl font-bold tracking-wide">Justine E. Calilong</h1>
+                <p class="text-sky-400 font-semibold mt-1">IT Student</p>
+                <div class="flex flex-wrap gap-3 mt-4 justify-center md:justify-start text-sm text-slate-400">
+                    <span><i class="fa-solid fa-envelope mr-2"></i>justineecalilong28@gmail.com</span>
+                    <span><i class="fa-solid fa-phone mr-2"></i>09931434972</span>
+                    <span><i class="fa-solid fa-location-dot mr-2"></i>Santor, Tanauan Batangas</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="max-w-6xl mx-auto px-6 mt-6">
+        <div class="card p-4 flex flex-wrap gap-4 justify-center md:justify-start text-sm font-medium">
+            <button onclick="showSection('about')" class="nav-btn px-4 py-2 rounded-lg accent text-slate-900 font-semibold">About</button>
+            <button onclick="showSection('skills')" class="nav-btn px-4 py-2 rounded-lg hover:bg-slate-800">Skills</button>
+            <button onclick="showSection('portfolio')" class="nav-btn px-4 py-2 rounded-lg hover:bg-slate-800">Portfolio</button>
+            <button onclick="showSection('contact')" class="nav-btn px-4 py-2 rounded-lg hover:bg-slate-800">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-6xl mx-auto px-6 py-6 space-y-6">
+
+        <!-- About -->
+        <section id="about" class="section card p-8 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-sky-400">About Me</h2>
+            <p class="text-slate-300 leading-relaxed">
+                                Hi! I'm a motivated student who enjoys learning technology and improving my skills.
+                                I like building projects, exploring new tools, and challenging myself to grow both academically and personally. I am also a student-athlete who plays basketball, balancing academics and training while building discipline,
+                                teamwork, and strong time-management skills.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section hidden card p-8 shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 text-sky-400">Skills</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                    <i class="fa-solid fa-code text-sky-400 text-2xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">Basic Programming</h3>
+                    <p class="text-sm text-slate-400">Familiar with basic programming languages and core coding concepts.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                    <i class="fa-solid fa-globe text-sky-400 text-2xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">Basic Web Development</h3>
+                    <p class="text-sm text-slate-400">Develop simple, clean websites that work smoothly on all devices</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                    <i class="fa-solid fa-people-group text-sky-400 text-2xl mb-3"></i>
+                    <h3 class="font-semibold mb-2">Teamwork</h3>
+                    <p class="text-sm text-slate-400"</p>Collaborate smoothly with teammates to complete group tasks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="section hidden card p-8 shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 text-sky-400">Portfolio</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <div class="h-40 bg-slate-800"></div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Project One</h3>
+                        <p class="text-sm text-slate-400">Project description goes here.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <div class="h-40 bg-slate-800"></div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Project Two</h3>
+                        <p class="text-sm text-slate-400">Project description goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section hidden card p-8 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-sky-400">Contact</h2>
+            <p class="text-slate-400 mb-4">Feel free to reach out for collaborations or opportunities.</p>
+            <div class="space-y-2 text-sm">
+                <p><i class="fa-solid fa-envelope mr-2 text-sky-400"></i>justineecalilong28@gmail.com</p>
+                <p><i class="fa-solid fa-phone mr-2 text-sky-400"></i>09931434972</p>
+                <p><i class="fa-solid fa-location-dot mr-2 text-sky-400"></i>Santor, Tanauan Batangas</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('accent','text-slate-900','font-semibold'));
+            event.target.classList.add('accent','text-slate-900','font-semibold');
+        }
+    </script>
+
+</body>
+</html>
