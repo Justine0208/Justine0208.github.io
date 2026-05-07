@@ -15,7 +15,30 @@ body{
   font-family:'Creepster', cursive;
 }
 
-/* HERO */
+/* LIGHT MODE */
+body.light-mode{
+  background:#f5f5f5;
+  color:#0b0c10;
+}
+
+body.light-mode .card{
+  background:#ffffff !important;
+  color:#0b0c10 !important;
+}
+
+body.light-mode .navbar{
+  background:#ffffff !important;
+}
+
+body.light-mode .btn-theme{
+  background:#0b0c10;
+  color:#ffffff;
+}
+
+body.light-mode .navbar-brand{
+  color:#0b0c10 !important;
+}
+
 .hero{
   height:90vh;
   display:flex;
@@ -38,7 +61,6 @@ body{
   font-weight:bold;
 }
 
-/* CARDS */
 .card:hover{
   transform:scale(1.05);
   transition:0.3s;
@@ -48,7 +70,6 @@ body{
   border:2px solid #66fcf1;
 }
 
-/* PAGES */
 .page{display:none;}
 .active{display:block;}
 
@@ -63,16 +84,20 @@ body{
 
 <body>
 
-<!-- NAV -->
 <nav class="navbar navbar-dark bg-dark px-3">
   <a class="navbar-brand" href="#" onclick="showPage('home')">Rick & Morty Multiverse</a>
+
   <div>
     <button class="btn btn-sm btn-outline-info" onclick="showPage('home')">Home</button>
     <button class="btn btn-sm btn-outline-info" onclick="showPage('characters')">Characters</button>
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button id="themeBtn" class="btn btn-sm btn-warning ms-2" onclick="toggleTheme()">
+      Light Mode
+    </button>
   </div>
 </nav>
 
-<!-- HOME -->
 <div id="home" class="page active">
 
 <section class="hero">
@@ -87,7 +112,6 @@ body{
 
 </div>
 
-<!-- CHARACTERS -->
 <div id="characters" class="page container py-4">
 
 <h1>Characters</h1>
@@ -104,7 +128,6 @@ body{
 
 </div>
 
-<!-- DETAILS -->
 <div id="details" class="page container py-4">
   <div id="detailBox" class="center">Loading...</div>
 </div>
@@ -114,7 +137,6 @@ body{
 let page = 1;
 let allCharacters = [];
 
-/* PAGE SWITCH */
 function showPage(id){
   document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
   document.getElementById(id).classList.add("active");
@@ -122,7 +144,19 @@ function showPage(id){
   if(id === "characters") loadCharacters();
 }
 
-/* LOAD API */
+/* THEME TOGGLE WITH BUTTON TEXT CHANGE */
+function toggleTheme(){
+  document.body.classList.toggle("light-mode");
+
+  let btn = document.getElementById("themeBtn");
+
+  if(document.body.classList.contains("light-mode")){
+    btn.innerText = "Dark Mode";
+  } else {
+    btn.innerText = "Light Mode";
+  }
+}
+
 function loadCharacters(){
   document.getElementById("loading").style.display="block";
 
@@ -138,7 +172,6 @@ function loadCharacters(){
   });
 }
 
-/* RENDER LIST */
 function render(chars){
   let box = document.getElementById("characterList");
   box.innerHTML="";
@@ -164,14 +197,12 @@ function render(chars){
   });
 }
 
-/* SEARCH */
 document.getElementById("search").addEventListener("input", e=>{
   render(allCharacters.filter(c=>
     c.name.toLowerCase().includes(e.target.value.toLowerCase())
   ));
 });
 
-/* PAGINATION */
 function nextPage(){
   page++;
   loadCharacters();
@@ -184,7 +215,6 @@ function prevPage(){
   }
 }
 
-/* VIEW DETAILS (SMALL CARD FIXED) */
 function viewCharacter(id){
   showPage("details");
 
